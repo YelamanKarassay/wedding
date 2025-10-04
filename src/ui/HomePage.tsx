@@ -1,6 +1,5 @@
 import 'aos/dist/aos.css';
 import AddressBlock from './AddressBlock';
-import DressCodeBlock from './DressCodeBlock';
 import InvitationBlock from './InvitationBlock';
 import MusicButton from './MusicButton';
 import { Program } from './Proggram';
@@ -34,7 +33,6 @@ export default function HomePage() {
       <WeddingCalendar />
       <WeddingCountdown />
       <RespectBlock />
-      <DressCodeBlock />
       <Program />
       <AddressBlock />
       <RsvpForm />

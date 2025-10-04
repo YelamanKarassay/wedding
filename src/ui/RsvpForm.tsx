@@ -90,9 +90,6 @@ export default function RsvpForm() {
             />
           </div>
 
-          <h2 className="text-xl text-[#52503f] mt-4">
-            {t('rsvp_subtitle')}
-          </h2>
         </div>
 
         {feedback && (
@@ -135,41 +132,6 @@ export default function RsvpForm() {
           </div>
         )}
 
-        <form onSubmit={onSubmit}>
-          <div className="mb-4">
-            <label htmlFor="fullname" className="block mb-2 font-medium text-[#52503f]">
-              {t('rsvp_name_label')}
-            </label>
-            <input
-              id="fullname"
-              type="text"
-              value={fullname}
-              onChange={(e) => setFullname(e.target.value)}
-              placeholder={t('rsvp_name_placeholder')}
-              className="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#b3ac92] text-[#52503f]"
-            />
-          </div>
-
-          <div className="mb-4">
-            <div className="block mb-2 font-medium text-[#52503f]">
-              {t('rsvp_attendance_label')}
-            </div>
-            <div className="flex flex-col space-y-2">
-              {renderRadioOption('yes', t('rsvp_yes'))}
-              {renderRadioOption('no', t('rsvp_no'))}
-            </div>
-          </div>
-
-          <div className="text-center">
-            <button
-              type="submit"
-              className="px-6 py-2 bg-[#baac92] text-white rounded disabled:opacity-50"
-              disabled={loading}
-            >
-              {t('rsvp_submit')}
-            </button>
-          </div>
-        </form>
       </div>
     </div>
   );

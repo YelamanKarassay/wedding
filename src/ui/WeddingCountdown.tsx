@@ -13,7 +13,7 @@ export default function WeddingCountdown() {
     seconds: 0,
   });
 
-  const targetDate = new Date('2025-08-09T17:30:00').getTime();
+  const targetDate = new Date('2025-10-24T17:30:00+05:00').getTime();
 
   useEffect(() => {
     AOS.init({ duration: 1000 });
