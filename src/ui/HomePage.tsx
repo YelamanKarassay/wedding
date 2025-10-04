@@ -2,7 +2,6 @@ import 'aos/dist/aos.css';
 import AddressBlock from './AddressBlock';
 import InvitationBlock from './InvitationBlock';
 import MusicButton from './MusicButton';
-import { Program } from './Proggram';
 import RespectBlock from './RespectBlock';
 import RsvpForm from './RsvpForm';
 import WeddingCalendar from './WeddingCalendar';
@@ -17,8 +16,8 @@ export default function HomePage() {
 
   return (
     <>
-      <div className="h-[740px] relative">
-        <img src={logo} alt="logo" className='h-[740px] w-full object-contain' />
+      <div className="relative max-h-[740px] flex justify-center">
+        <img src={logo} alt="logo" className='max-h-[740px] w-full object-contain' style={{ width: 'unset' }} />
       </div>
 
       <MusicButton />
@@ -26,7 +25,6 @@ export default function HomePage() {
       <WeddingCalendar />
       <WeddingCountdown />
       <RespectBlock />
-      <Program />
       <AddressBlock />
       <RsvpForm />
     </>

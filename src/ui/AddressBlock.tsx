@@ -22,7 +22,7 @@ export default function AddressBlock() {
       </p>
 
       <a
-        href="https://2gis.kz/astana/geo/70000001042727082"
+        href="https://2gis.kz/almaty/geo/70000001024247901"
         target="_blank"
         rel="noopener noreferrer"
         className="text-black"
