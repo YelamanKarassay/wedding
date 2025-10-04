@@ -68,6 +68,8 @@ export default function RsvpForm() {
       </label>
     );
   };
+  renderRadioOption;
+  onSubmit
 
   return (
     <div className="flex items-center justify-center">
