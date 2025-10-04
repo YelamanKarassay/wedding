@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 
+const START_OFFSET_SECONDS = 78;
+
 export default function MusicButton() {
   const [playing, setPlaying] = useState(false);
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -11,31 +13,52 @@ export default function MusicButton() {
   const rusUrl = './music.m4a';
 
   useEffect(() => {
-    if (!audioRef.current) {
-      audioRef.current = new Audio(isKazakh ? kazUrl : rusUrl);
+    const audio = new Audio(isKazakh ? kazUrl : rusUrl);
+    audio.loop = true;
 
-      if (!isKazakh) {
-        audioRef.current.addEventListener('loadedmetadata', () => {
-          if (audioRef.current && audioRef.current.currentTime < 78) {
-            audioRef.current.currentTime = 78;
-          }
-        });
+    const ensureStartOffset = () => {
+      if (!isKazakh && audio.currentTime < START_OFFSET_SECONDS) {
+        audio.currentTime = START_OFFSET_SECONDS;
       }
+    };
+
+    if (!isKazakh) {
+      audio.addEventListener('loadedmetadata', ensureStartOffset);
+    }
+
+    if (audioRef.current) {
+      audioRef.current.pause();
+    }
+
+    audioRef.current = audio;
+
+    return () => {
+      if (!isKazakh) {
+        audio.removeEventListener('loadedmetadata', ensureStartOffset);
+      }
+      audio.pause();
+    };
+  }, [isKazakh]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) {
+      return;
     }
 
     if (playing) {
-      if (!isKazakh && audioRef.current && audioRef.current.currentTime < 78) {
-        audioRef.current.currentTime = 78;
+      if (!isKazakh && audio.currentTime < START_OFFSET_SECONDS) {
+        audio.currentTime = START_OFFSET_SECONDS;
       }
-      audioRef.current?.play();
+      audio.play().catch(() => setPlaying(false));
     } else {
-      audioRef.current?.pause();
+      audio.pause();
     }
   }, [playing, isKazakh]);
 
   const togglePlay = () => {
-    if (!playing && audioRef.current && !isKazakh) {
-      audioRef.current.currentTime = 78;
+    if (!audioRef.current) {
+      return;
     }
     setPlaying((prev) => !prev);
   };
@@ -45,10 +68,11 @@ export default function MusicButton() {
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.currentTime = 0;
+        audioRef.current = null;
       }
     };
   }, []);
-  
+
   return (
     <div className="flex items-center justify-center pt-10">
       <button

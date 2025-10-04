@@ -46,7 +46,7 @@ export default function WeddingCountdown() {
       data-aos="fade-in"
     >
       <img
-        src="https://static.tildacdn.pro/tild6638-3861-4431-a232-663731656538/f7d3130f-d801-4806-9.jpg"
+        src="kazakh_couple.jpeg"
         alt="Фоновое изображение"
         className="absolute inset-0 w-full h-full object-cover opacity-80"
       />
