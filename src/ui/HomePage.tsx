@@ -13,19 +13,12 @@ export default function HomePage() {
   const { i18n } = useTranslation();
   const currentLang = i18n.language;
 
-  const logo = currentLang === 'kk' ? './kazlogo.png' : './salogo.png';
+  const logo = currentLang === 'kk' ? './kazlogo2.jpeg' : './salogo.png';
 
   return (
     <>
       <div className="h-[740px] relative">
-        <img src="./main.jpg" className='h-[382px] w-full' alt="" />
-        <div
-          className="absolute top-[243px] left-0 w-full h-[140px]
-          bg-gradient-to-b from-transparent via-[#fbfafb]/40 to-[#fbfafb] max-w-[500px] min-w-[300px]"
-        />
-        <div className="absolute top-[400px] left-0 w-full">
-          <img src={logo} alt="logo" className='h-[336px] w-full' />
-        </div>
+        <img src={logo} alt="logo" className='h-[740px] w-full object-contain' />
       </div>
 
       <MusicButton />
