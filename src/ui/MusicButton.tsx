@@ -7,7 +7,7 @@ export default function MusicButton() {
   const { i18n } = useTranslation();
 
   const isKazakh = i18n.language === 'kk';
-  const kazUrl = 'https://dl.dropbox.com/scl/fi/u98rz0v1vk88qjw3lf3ma/mdee-toi-zyry-cover-mdos-mucasan_kQhAnJWD.mp3?rlkey=ti99jldmqdqfv9zucyzd9qtpk&st=1vhjq69r&dl=0';
+  const kazUrl = './musickazakh.mp3';
   const rusUrl = './music.m4a';
 
   useEffect(() => {
