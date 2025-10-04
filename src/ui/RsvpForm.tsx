@@ -83,7 +83,7 @@ export default function RsvpForm() {
             <img
               src="https://optim.tildacdn.pro/tild6663-3137-4361-b135-663737366637/-/resize/724x/-/format/webp/Vector.png"
               alt="Ornament"
-              className="absolute top-3 left-1 animate-spin-slow opacity-20"
+              className="absolute top-3 left-1 animate-spin-slow "
               style={{
                 width: '250px',
                 height: '250px',

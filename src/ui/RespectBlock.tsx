@@ -10,7 +10,7 @@ export default function RespectBlock() {
         {isKazakh ? 'Құрметпен,' : 'С уважением,'}
       </p>
       <h2 className="text-2xl text-[#b3ac92] italic font-bold">
-        Валихан – Алмагуль {/*<br /> Ерлан – Тахмина*/}
+        Уалихан – Алмагүл {/*<br /> Ерлан – Тахмина*/}
       </h2>
       <p className="text-[#b3ac92] text-sm mt-1 italic">
         {isKazakh ? 'Той иелері' : ''}
