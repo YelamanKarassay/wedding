@@ -37,6 +37,7 @@ const resources = {
       address_button: '2ГИС',
 
       rsvp_title: 'Сіздерді асыға күтеміз!',
+      rsvp_title2: 'Құдалық мың жылдық болсын!',
       rsvp_subtitle: 'Тойға қатысатыныңызды растауыңызды сұраймыз',
       rsvp_name_label: 'Аты-жөніңіз',
       rsvp_name_placeholder: 'Сіздің атыңыз',

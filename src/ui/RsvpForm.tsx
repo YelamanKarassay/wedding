@@ -78,6 +78,10 @@ export default function RsvpForm() {
           <h1 className="text-2xl text-[#b3ac92] mb-4 italic">
             {t('rsvp_title')}
           </h1>
+          <h1 className="text-2xl text-[#b3ac92] mb-4 italic">
+            {t('rsvp_title2')}
+          </h1>
+
 
           <div className="relative w-[250px] h-36 mx-auto overflow-hidden">
             <img
