@@ -8,7 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "deploy": "gh-pages -d dist -r https://github.com/saparaly/wedding.git"
+    "deploy": "gh-pages -d dist -r https://github.com/yelamankarassay/wedding.git"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.3",
